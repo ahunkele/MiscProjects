@@ -1,0 +1,12 @@
+Andrew Hunkele
+
+The graph of the original appears to fit O(n) time complexity. However, it is possible that it fits O(n^2) in a larger test scenario
+this is due to the way the graph curves towrds the end of the test. 
+
+The first one checks the adjacent blocks gor every node that is inside the list. It then appends it into said list when it is the same color.
+The reason this one take longer than our second flood function is because its checks dopes not utalize the space correctly. it traverses 
+we need a more optimal stratagy for checking the adjacent blocks. 
+
+With the second flood functon. The graph is almost identical to the first. However, the overall time it took for each test was much lower.
+We fiexd our time issues with shortening our code and making less variables. This freed up a lot of memory and the overall funcation was just much more concise.
+The code is aslo much more simple to look at. It becomse easier to tell what exactly it is doing. 
