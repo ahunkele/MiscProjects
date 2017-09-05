@@ -1,0 +1,53 @@
+B481 / Spring 2017
+Homework 06
+Andrew Hunkele --- Ahunkele
+
+Task A
+1.	 [(x2 - x1) ? (x3 - x2)]   [(x2 – x1, y2 – y1, z2 – z1) X (x3 – x2, y3 – y2, z3 – z2)]
+== Cannot take a dot product of the resulting matrices. X2 and X1 but be the same dimensions to subtract. Since X2 is also on the other side of the multiplication this implies X3 and X2 are the same dimensions meaning 
+X2 – X1   and X3 – X2 are the same dimensions resulting no possible product.
+
+2.) [(x2 - x1) ? (x3 - x2)]   , [(x3 – x2) ? (x1 – x3)] ,  [(x3 – x2) ? (x2 – x1)]  
+   [(x1 – x3) ? (x3 - x2)],   [(x2 - x1) ? (x1 – x3)],  [(x1 – x3) ? (x2 – x1)]   
+
+	??? maybe 
+Task B
+1. Physical quantities of visible light are represented by wavelength distribution. The human eye detects 3 bands centered on red, green, and blue. Red is 700 nm, green at 546 nm, and Blue is at 436 nm . Two colors are considered distinct from each other based on the intensity of the wavelengths, measured in nm.
+2. Most displays emit RGB because:
+	1) Using three colors reflects the bands that the vast majority of humans see. Some people scan see two usually color blind and some people can see four, but using three values represents the majority of people.
+	2) Red, green and blue are used so that computer graphics displays reflect how the human retina perceives bands of light/color further. Humans see three bands, mentioned above, but the bands are specifically centered on red, green and blue due to how the retina receives the wavelengths. Additionally, RGB represents an additive color model, so the colors can be added to create different frequencies to achieve colors in between red, green and blue.
+3. We can provide a quantitative, perceptually relevant color description based off of a physical color description by relating the numerical description to the physical/perceptual description. We would do this by identifying the numerical description and determining how our eyes would perceive such a wavelength using a diagram detailing the visible light spectrum. 
+Task C
+1. Before mask: (0,0,0)
+   Mask is (1,0,0) so it says to let R pass but not G or B.
+   After mask: (0,0,0)
+2. Before mask : (1,0,1)
+   Mask is (1,1,1) so it says to let RGB all pass.
+   After mask: (1,0,1)
+3. Before mask: (0,1,0)
+   Mask is (1,0,0) so it says to let R pass but not G or B.
+   After mask: (0,0,0)
+4. Before mask: (1,1,1)
+   Mask is (1,1,1) so it says to let RGB all pass.
+   After mask: (1,1,1)
+5. Before mask: (1,0,0)
+   Mask is (0,0,1) so it says to let B pass but not R or G.
+   After mask: (0,0,0)
+6. Before mask: (0,0,0)
+   Mask is (1,1,0) so it says to let R and G pass but not B.
+   After mask: (0,0,0)
+7. Before mask: (1,0,1)
+   Mask is (0,0,0) so nothing passes.
+   After mask: (0,0,0)
+8. Before mask: (1,1,1)
+   Mask is (1,0,0) so it says to let R pass but not G or B.
+   After mask: (1,0,0)
+9. Before mask: (1,1,1)
+   Mask is (1,1,1) so it says to let RGB all pass.
+   After mask: (1,1,1)
+
+Task D
+1. Blending is the result of combining the source, destination, source factor, and destination factor. It multiplies the source and the source factor then multiplies the destination by the destination factor, then finally adds them together for the result. Therefore, the order dependence for blending requires that the multiplication steps occur before addition. However since it is addition, the two multiplication steps can occur in any order and they can be added in any order. Additionally, if the blending is occurring on colors that have a transparency (alpha channel) then the order matters, as color layers/objects further from the camera view should be added first, then as objects get progressively closer to the camera view you add those. This ensures that the color view closest to the camera takes into account all colors and alpha channels.
+
+2. We use the blending formula: As * Sa + Ad * Da on each of the three layers, by calculating the furthest (I1) up to the closest (I3). Resulting in a formula:
+	(I3As * I3Sa + I3Ad * I3Da) * (I2As * I2Sa + I2Ad * I2Da) * (I1As * I1Sa + I1Ad * I1Da)

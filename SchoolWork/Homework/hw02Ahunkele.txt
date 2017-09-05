@@ -1,0 +1,108 @@
+RobotArm:
+
+Block 1: upper arm
+
+push-modelview-matrix(); 
+translate (-1.0, 0.0, 0.0); 
+rotate (shoulder, 0.0, 0.0, 1.0); 
+translate (1.0, 0.0, 0.0); 
+push-modelview-matrix(); scale(2.0, 0.4, 1.0); 
+draw-square(1.0);
+pop-modelview-matrix(); 
+
+
+Block 2: Lower Arm
+
+translate (1.0, 0.0, 0.0);
+rotate (elbowJoint, 0.0, 0.0, 1.0);
+translate (1.0, 0.0, 0.0); 
+push-modelview-matrix(); 
+scale(2.0, 0.4, 1.0); 
+draw-square(1.0); pop-modelview-matrix(); 
+pop-modelview-matrix(); 
+
+Block 3: first finger
+
+translate (1.0, 0.0, 0.0);
+rotate (figerJoint, 0.0, 0.0, 1.0); 
+translate (1.0, 0.0, 0.0); 
+push-modelview-matrix(); 
+scale(.1, .1, .1); 
+draw-square(1.0); 
+pop-modelview-matrix(); 
+
+Block 4: 2nd finger
+
+translate (1.0, 0.0, 0.0);
+rotate (fingerJoint, 0.0, 0.0, 1.0); 
+translate (1.0, 0.0, 0.0); 
+push-modelview-matrix(); 
+scale(.1, .1, .1); 
+draw-square(1.0); 
+pop-modelview-matrix(); 
+
+
+Block 5: 3nd finger
+
+translate (1.0, 0.0, 0.0);
+rotate (fingerJoint, 0.0, 0.0, 1.0); 
+translate (1.0, 0.0, 0.0); 
+push-modelview-matrix(); 
+scale(.1, .1, .1); 
+draw-square(1.0); 
+pop-modelview-matrix(); 
+
+Block 6: 4th finger:
+
+translate (1.0, 0.0, 0.0);
+rotate (fingerJoint, 0.0, 0.0, 1.0); 
+translate (1.0, 0.0, 0.0); 
+push-modelview-matrix(); 
+scale(.1, .1, .1); 
+draw-square(1.0); 
+pop-modelview-matrix(); 
+
+block 7:
+
+translate (1.0, 0.0, 0.0);
+rotate (fingerJoint, 0.0, 0.0, 1.0); 
+translate (1.0, 0.0, 0.0); 
+push-modelview-matrix(); 
+scale(.1, .1, .1); 
+draw-square(1.0); 
+pop-modelview-matrix(); 
+
+
+block 8:
+
+translate (1.0, 0.0, 0.0);
+rotate (fingerJoint, 0.0, 0.0, 1.0); 
+translate (1.0, 0.0, 0.0); 
+push-modelview-matrix(); 
+scale(.1, .1, .1); 
+draw-square(1.0); 
+pop-modelview-matrix(); 
+
+
+
+
+B.) Lin Interpolation
+	1. K = 5/9 ( F - 32) + 273,    F = 9/5( K - 273) + 32
+	2. F = 9/5 × (C) + 32,  T(K) = T(C) + 273.15
+	3.) Af * x = Bf,   Ab * y = Bb ---> x and y are solved when the formulas are known
+
+
+C.) Translation: Inverse always exists?: Yes, Order Dependent?: No, Fixed point exisist: Yes
+    Rotation: Inverse always exists?: Yes, Order Dependent?: No, Fixed point exisist: Yes
+    Scaling: Inverse always exists?: Yes, Order Dependent?: No, Fixed point exisist: Yes
+    Shear: Inverse always exists?: Yes, Order Dependent?: No, Fixed point exisist: Yes
+
+
+D.) 
+
+	1.) compute midpoint first = (x1 + x2) / 2, (y1 + y2) / 2
+	now look at point x's x and y to see if its less than the midpoint which is on the left
+	if its greater it'd be on the right
+	3.) (y – y0) / (x – x0)  =  (y1 –y0) / (x1 – x0)
+	4.) Parametric form: r(t)=r0+tv   is the set of all the points on the line that passes through the origin and the point v.
+            Implicit form: n·(r-r0)=0  If a,b contained in R

@@ -1,0 +1,57 @@
+B481 / Spring 2017
+Homework 05
+Andrew Hunkele Ahunkele
+
+Part A
+	1. |(a • b)| = |a| * |b| * sin (Angle)
+	2. || x * y || = || x || * || y || * | sin(Angle) |
+	3. u * v = (a * c) + (b * c)
+	4.      [(x - 1) (y - 1) (z - 1)
+		(0 - 1) (1 - 1) (1 - 1)		= 	0
+		(1 - 1) (1 - 1) (0 - 1)]
+		
+		[(x - 1)       (y - 1)         (z - 1)
+		 -1		 0		 0	 =	0
+		 0		 0		 -1]
+		
+		 0 * (x - 1) + -1 * (y - 1) + 0 * (z - 1)   = 0
+		-y + 1 = 0
+		-y = -1
+		 y = 1
+	
+Part B
+	pipeline:
+		modelView matrix -> projection matrix -> clip -> perspective division -> viewport matrix
+
+	1. THe transformation defines the modeling. This step is the entry of vertices turned into eye coordinates.
+	
+    (1.0,         0.0,         0.0,      0.0,
+     0.0,         1.0,         0.0,      0.0,
+     0.0,         0.0,         1.0,      0.0,
+     pTX,         pTY,         pTZ,      1.0)
+	
+	2. This transformation defines viewing. This step is the entry of eye coordinates into a projection matrix defined by the camera, creating clip coordinates. Those clip coordinates are then run through a clipping region, also defined by the camera's position.
+	
+	3. This transformation transforms the screen in world coordinates by a pinhole camera projection approach. Using a fov, aspect ratio, and a near and far value for the z axis. Our output is a set of normalized object coordinates.
+	
+    lAngle = (pFoV / 180.0) * 3.14159;
+    lFocus = 1.0 / tan ( lAngle * 0.5 );
+
+    lPerspectiveMatrix[0][0] = lFocus / pAspect;
+    lPerspectiveMatrix[1][1] = lFocus;
+    lPerspectiveMatrix[2][2] = (pFar + pNear) / (pNear - pFar);
+    lPerspectiveMatrix[2][3] = -1.0;
+    lPerspectiveMatrix[3][2] = (2.0 * pFar * pNear) / (pNear - pFar);
+
+   4.) We can use the normalized device coords and represent them as world coords. The view port matrix uses them to convert them into window coords, then finally does pixle transformations into screen viewport pixles.
+
+
+par c.)
+
+	1.) the process that the color of an obj's material approximates the combination of multiple light sources that can act on multiple objects. but doesnt act on any of them as other light sources do.
+	 Example:   it approximates the resulting color of a ball which is being acted upon by the sun and a green ceiling light, which would result in a mixture of colors and light intensities.
+	2.) P, its normal N, and XL are all geometric factors for diffuse lighting. The camera doesnt matter. 
+	3.) Bisector method. We can take the cos of the angle and between it and the normal N of its surface. 
+		cos (Angle) = N • B. This method is interchangeable with Phong's empirical model (C • R). So B = cos(Angle) / N.
+	4.)When specular highlight is small. This is because viewports are not alligned with reflecting it will have a cos less than ne which rapidly approaches zero when raised to a high power. This is often seen in mirror-like reflections.
+	5.) There is 1 normal per face. With one face normal N and a constant direction of light L, the instensity of light on any surface can be computed by I = N * L. 

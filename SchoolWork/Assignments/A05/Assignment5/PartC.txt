@@ -1,0 +1,12 @@
+Partner Dakota Langdon
+
+A06 Proposal
+The topic my partner and I would like to address is lighting, specifically the topic of subtractive colour. We plan it to essentially be a 3D recreation of the Combined Color Mixing demo from class. (http://graphics.cs.brown.edu/research/exploratory/freeSoftware/repository/edu/brown/cs/exploratories/applets/combinedColorMixing/combined_color_mixing_guide.html) The idea is to have two lamps for the light sources and a geometric shape (sphere most likely) which the lamps cast light on. The lamps and shape can all be rotated. The lamps are likely to be represented simply by an oval shape, or maybe a rectangle for ease of modeling. The colours the lamps emit can be changed like in the demo, and the colour of the object can also be changed. The colour of the object will act as the paint on the canvas or the filter, so it should "subtract" the combined colours of the lights and the result should be the orb being lit in whatever way the combined light sources and surface colour determine.
+
+1. Lighting and material. We hope to implement non trivial lighting for the illuminations casted on the orb.
+2. Camera motion. We hope to allow the user to change the camera's perspective to slightly modify the viewing interaction.
+3. Interaction. The lamps and object can all be rotated/manipulated and we hope to implement them in such a way that the light being casted changes based on said manipulation.
+4. Animation. We currently plan on making the object spin, which may be slightly difficult to see on a sphere.
+5. Mapping. We hope to provide a texture of some sort to the lamps. Maybe the object as well if that doesn't complicate the lighting events.
+
+We decided on this topic as the topic of colour theory has been interesting, and the provided demos in class spurred an interest in recreating them in 3D for the sake of slightly "modernizing" them, should we implement it well.
